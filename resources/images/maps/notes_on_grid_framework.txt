@@ -1,0 +1,36 @@
+# NOTES ON GRID FRAMEWORK MAPS
+
+SYMBOLPOOL
+	⌂ = continuous pattern
+	∆ = alternates; alternating
+	▫ = denotes x, y, z (in that order) points in a grid
+	≈ = almost equal to
+	== = equal to
+	» = return
+
+Basic Grid >
+	floor outlines, denoting walls and obj's
+	color code:
+		black (line; box) = std; for standard walls, obj's etc
+		dk_gray (line) = collapsable wall; only for walls, which would typically obscure the player character, it will fade to show the player's position
+		blue (gateway) = indicates an open gateway, ie. door, gate, etc
+		red (gateway) = indicates locked gateway, ie. door, gate, etc
+		dk_red (gateway) = indicates SEALED_GATEWAY; does not unlock <NEEDED?>
+		orange (circle; box) = switch, used to unlock red gateways
+		green (line) = indicates explicit walkways, or traversable objects <NEEDED?>
+		sky_blue (circle; box) = indicates a save point
+		gold (circle) = breo stream
+		yellow (circle; box) = life field
+
+Objects:
+	walls, beds, general_objects, cars, buildings, etc.
+
+	walls = all inner-walls of buildings are objects
+	doors = all doors / gates are objects; No intersecting with walls, will use a 'special wall instance', if needed
+	beds = all objects which would be found in a building; obscure player's path
+	general_objects = all trashcans, debris, etc.
+	cars = all vehicles in roadways
+	buildings = all non_enterable buildings; enterable buildings are a different class
+
+ANGLE_DEGREE ≈ 40.0 degrees (a little less than 45 degrees)
+APPROX_PIXEL_SLOPE = ⌂((1▫3)∆(1▫4))

@@ -1,0 +1,74 @@
+PROJECT: LOST SOUL
+
+This is the source code for the Lost Soul (LS) game, written in Python3.5.1 (Anaconda3, 64-bit), with Pygame
+
+LS is a 2-D Stealth / RTS game; scrolling map game;
+
+!-- the first part of this README will cover information regarding the game, gameplay and content related to that
+	the second part will discuss development of this project (mostly anecdotal)
+	the third part will cover information related the actual code, extended documentation regarding the code, etc --
+
+INDEX:
+	- FORWARD
+	- PART I:
+		1	Gameplay Overview
+		2	Alpha Version
+		3	Beta Version
+		4	Release Version 1.x
+		5	Entity General Overview
+		6	Inspiration(s) For The Story
+		7	Redacted Content
+	- PART II:
+		1	Development Overview
+		2	DEV Version
+		3	DGN Version
+		4	DBG Version
+		5	* Other Versions
+		6	Anecdotes
+	- PART III:
+		1	File and Folder Structure
+		2	Passing Variables
+		3	Why blit and not bit[map]?
+		4	Notes On Executable
+		5	Notes On Cython
+		6	Known Bugs
+	- AFTERWARD
+
+######################## FORWARD
+
+Project: 		prj_ls
+Group:			N/A; DEV16 [anecdotal]
+Author:			Ryan Pelton <ryantp92@hotmail.com>
+Date:			##
+
+License:		##
+
+
+######################## PART I
+
+
+######################## PART II
+
+II.6 Anecdotes
+
+	- The groupname DEV16 (while decent sounding, I guess) is simply the name of a folder on a desktop (which contains
+		the ls/src directory).
+
+######################## PART III
+
+III.1 File and Folder Structure
+
+	The File and Folder Structure (FFS) looks standard, main files occupying the root directory and subdirectories to help
+organize the modules, images and data files. However, given the way this program is set up, the FFS tends to be a bit of a
+headache (the other meaning of the FFS acronym is appropriate here :D). There is nothing outstanding about the subs [data,
+backend, resources, levels]; the only `unique` looking one (for lack of a better term) is lsmods, which is just a subdir
+for LS-specific modules, including the enemy and player modules.
+
+III.2 Passing Variables
+
+	Becasue another way of structuring this program hadn't exposed itself during development, this program relies HEAVILY on
+passing variables and objects. While this may be perfectly normal, the amount of passing appears to be on the strong side,
+particularly the passing of the same object to multiple functions and other objects (in this program, the
+pygame.display.set_mode() object (herein named `screen`)).
+
+######################## AFTERWARD
