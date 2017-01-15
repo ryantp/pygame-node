@@ -9,23 +9,6 @@ class SaveMaster(object):
 	'''SaveMaster -- object for data persistance; imporovement upon savedata.py;'''
 
 	#db table names
-	player = 'player_data_save'
-	player_ref = 'player_data_ref'
-	monster = 'entity_data_save'
-	level = ['lvl01',
-		'lvl02',
-		'lvl11',
-		'lvl12',
-		'lvl13',
-		'lvl21',
-		'lvl22',
-		'lvl23',
-		'lvl31',
-		'lvl32',
-		'lvl33',
-		'lvl41',
-		'lvl42',
-		'lvl43']
 
 	def __init__(self, rootdir):
 		self.data = rootdir + '/data' # the directory that holds the database
@@ -214,9 +197,9 @@ class SaveMaster(object):
 			pass
 		else:
 			ds = self.get_time() # for redundancy
-		command = 'INSERT INTO player_data_save (level_number, level_name, sublevel_number, sublevel_name, map_position_x, \
+		command = '''INSERT INTO player_data_save (level_number, level_name, sublevel_number, sublevel_name, map_position_x, \
 		map_position_y, map_x_displace, map_y_displace, current_hearts, total_hearts, current_stamina_points, \
-		total_stamina_points, datestamp) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)'
+		total_stamina_points, datestamp) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)'''
 		values = [level[0],
 			level[1],
 			sublevel[0],
