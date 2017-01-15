@@ -1,6 +1,6 @@
 #PYTHON3.5.1 (Anaconda3, 64-BIT);
 
-'''the main hub module for the lost souls game; any and all sub directory modules will be pulled into this file.
+'''the main hub for the lost souls game; any and all sub directory modules will be pulled into this file.
 
 	this module is for actual levels and gameplay, not for the start_screen or main_menu; those should be handled in a different 
 		module
@@ -71,15 +71,7 @@ import lsinit
 	###############################################################################
 
 # INITIATE PYGAME
-'''###===---DEBUG---===###'''
-if settings.DEBUG:
-	print("\rinitializing pygame: start\b\b\b\b\b", end = "")
-	'''###===---DEBUG---===###'''
 pygame.init()
-'''###===---DEBUG---===###'''
-if settings.DEBUG:
-	print("finish")
-	'''###===---DEBUG---===###'''
 
 # rootdir
 def rootdir():
@@ -105,58 +97,18 @@ _ng = 0 # new game; boolean integer
 player = [] # long_list of all values held in LSMDBLiteTest.db[player_data_save]
 entities = [] # nested list; holds values for every entity that appears on the given sublevel
 
-'''###===---DEBUG---===###'''
-if settings.DEBUG:
-	print("loading pygame images")
-	'''###===---DEBUG---===###'''
 # IMAGE VARIABLES
-'''###===---DEBUG---===###'''
-if settings.DEBUG:
-	print("\rloading player_sprite: start\b\b\b\b\b", end = "")
-	'''###===---DEBUG---===###'''
 player_sprite = pygame.image.load(settings.PLAYER_R_IMG['test']) # player's character image object
-'''###===---DEBUG---===###'''
-if settings.DEBUG:
-	print("finish")
-	print("\rloading hearts: start\b\b\b\b\b", end = "")
-	'''###===---DEBUG---===###'''
 hearts = pygame.image.load(settings.PLAYER_R_IMG['heart'])
-'''###===---DEBUG---===###'''
-if settings.DEBUG:
-	print("finish")
-	print("\rloading stamina: start\b\b\b\b\b", end = "")
-	'''###===---DEBUG---===###'''
 stamina = pygame.image.load(settings.PLAYER_R_IMG['stamina'])
-'''###===---DEBUG---===###'''
-if settings.DEBUG:
-	print("finish")
-	print("image batch one -- finished")
-	'''###===---DEBUG---===###'''
 
 PLAYER_IMG_OBJ = [player_sprite, hearts, stamina] # list containing all the image objects
 
-'''###===---DEBUG---===###'''
-if settings.DEBUG:
-	print("starting lsinit.main")
-	'''###===---DEBUG---===###'''
 _CHO = lsinit.main(SIZE, SCREEN) # a fancy `input()` scenario; main_menu will return either l, c, n [load, continue, new]
 
-'''###===---DEBUG---===###'''
-if settings.DEBUG:
-	print("\rcreating database-save object: start\b\b\b\b\b", end = "")
-	'''###===---DEBUG---===###'''
 # required_obj[4] -- first to be created
 d = dbsave.SaveMaster(ROOT) # database object
-'''###===---DEBUG---===###'''
-if settings.DEBUG:
-	print("finish")
-	print("\rcreating in-game menu object: start\b\b\b\b\b", end = "")
-	'''###===---DEBUG---===###'''
 m = menu.Menu(db_obj = d, screen = SCREEN) # master in-game menu object
-'''###===---DEBUG---===###'''
-if settings.DEBUG:
-	print("finish")
-	'''###===---DEBUG---===###'''
 
 if _CHO == 'l':
 	tmp = lmenu.load_menu(screen = SCREEN) # will return a value for Load Save ID [_]
@@ -225,10 +177,6 @@ OPTIONAL_OBJ = []
 #level_info = [], player_info = [], entity_info = [], required_obj = [], optional_obj = [], rootdir = None, screen = screen
 
 if player_info:
-	if settings.DEBUG:
-		print("%(cho)s: MAIN LOOP STARTING" % {
-			'cho': _CHO.upper(),
-		}) #DEBUG
 	# this block is for continue or load
 	loop = True
 	while loop:
