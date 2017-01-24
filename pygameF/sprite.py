@@ -2,7 +2,6 @@
 
 '''
 This is a simple collection of sprite classes.
-
 '''
 
 import pygame
@@ -56,8 +55,5 @@ class NPC(Char):
 	def say(self, *args):
 		self.textTool(msg, color, width, height, x_displace = 0, y_displace = 0, fname = None, fsize = 30)
 
-	def mvPtrn(self, p = None, mv = []):
-		# movement pattern
-		# p = pattern type
-		# mv = [0]displacement, [1]stride
+	def mvPtrn(self, *args):
 		pass
