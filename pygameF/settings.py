@@ -6,6 +6,10 @@ __email__ = "example@email.com" # author's email
 __website__ = "authorssite.com" # website if applicable
 __version__ = "1.0" # starting version number
 
+def get_root():
+	r = os.getcwd().split("\\")
+	return "/".join(r)
+
 
 def get_title(): # get the program's title
 	return __title__
