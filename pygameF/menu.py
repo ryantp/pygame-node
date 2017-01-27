@@ -4,7 +4,7 @@
 
 import pygame
 
-from pygamepredef.color import pygame_rgb as rgb
+from pygamepredef.color import xrgb as rgb
 from pygamepredef.sentdex import std4
 
 import loadmng
