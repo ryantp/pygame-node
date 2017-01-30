@@ -684,9 +684,7 @@ class SaveMaster(object):
 
 		print('FINISHED @ %s' % WTFILE)
 
-def main():
-	d = SaveMaster(rootdir = 'C:/Users/alpha/Desktop/DEV6/ls/src')
-	d._read_all()
+
 
 if __name__ == '__main__':
-	main()
+	pass
