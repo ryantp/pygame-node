@@ -1,0 +1,4 @@
+ATTN:
+`dbsave-depreciated.py` is for referrence only; it was apart of a project (which I have at the moment postponed)
+
+`dbsave.py` will look similar but obviously be more porable. Of course subclassing is going to be encouraged regardless of it's portability.

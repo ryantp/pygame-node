@@ -6,7 +6,7 @@ import sqlite3
 
 
 class SaveMaster(object):
-	'''SaveMaster -- object for data permanance; imporovement upon savedata.py;'''
+	'''SaveMaster -- object for data persistance; imporovement upon savedata.py;'''
 
 	#db table names
 
